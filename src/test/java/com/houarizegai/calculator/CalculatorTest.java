@@ -63,4 +63,9 @@ class CalculatorTest {
         String second = "10";
         Assertions.assertEquals(10, calculator.calc(first, second, 'l'));
     }
+    @Test
+    void gettext(){
+        calculator.setVal("5");
+        System.out.println(calculator.getResult());
+    }
 }
