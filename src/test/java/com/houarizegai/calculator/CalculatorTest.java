@@ -37,19 +37,43 @@ class CalculatorTest {
     void testCalc_plus(){
         double first = 200;
         String second = "100";
-        Assertions.assertEquals(300, calculator.calc(first, second, '+'));
+        double answer = 200 + 100;
+        Assertions.assertEquals(answer, calculator.calc(first, second, '+'));
     }
     @Test
     void testCalc_minus(){
         double first = 200;
         String second = "100";
-        Assertions.assertEquals(100, calculator.calc(first, second, '-'));
+        double answer = 200 - 100;
+        Assertions.assertEquals(answer, calculator.calc(first, second, '-'));
     }
     @Test
     void testCalc_multiplication(){
         double first = 200;
         String second = "100";
-        Assertions.assertEquals(20000, calculator.calc(first, second, '*'));
+        double answer = 200 * 100;
+        Assertions.assertEquals(answer, calculator.calc(first, second, '*'));
+    }
+    @Test
+    void testCalc_division(){
+        double first = 200;
+        String second = "100";
+        double answer = 200 / 100;
+        Assertions.assertEquals(answer, calculator.calc(first, second, '/'));
+    }
+    @Test
+    void testCalc_modulo(){
+        double first = 200;
+        String second = "100";
+        double answer = 200 % 100;
+        Assertions.assertEquals(answer, calculator.calc(first, second, '%'));
+    }
+    @Test
+    void testCalc_square(){
+        double first = 200;
+        String second = "100";
+        double answer = Math.pow(200,100);
+        Assertions.assertEquals(answer, calculator.calc(first, second, '^'));
     }
     @Test
     void testCalc_squre(){
