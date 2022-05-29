@@ -459,6 +459,7 @@ public class Calculator {
     public void setVal(String val){
         inText.setText(val);
     }
+    //public JButton getBtnAdd() {return this.btnAdd.doClick();}
     public double calc(double x, String input, char opt) {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
         double y = Double.parseDouble(input);
@@ -475,6 +476,10 @@ public class Calculator {
                 return x % y;
             case '^':
                 return Math.pow(x, y);
+            case  'l':
+                return Math.log(y);
+            case  '√':
+                return Math.sqrt(y);
             default:
                 inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
                 return y;

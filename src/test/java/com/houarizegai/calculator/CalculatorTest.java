@@ -76,20 +76,23 @@ class CalculatorTest {
         Assertions.assertEquals(answer, calculator.calc(first, second, '^'));
     }
     @Test
-    void testCalc_squre(){
+    void testCalc_sqrt(){
         double first = 3;
         String second = "10";
-        Assertions.assertEquals(10, calculator.calc(first, second, '√'));
+        double answer = Math.sqrt(10);
+        Assertions.assertEquals(answer, calculator.calc(first, second, '√'));
     }
     @Test
     void testCalc_ln(){
         double first = 3;
         String second = "10";
-        Assertions.assertEquals(10, calculator.calc(first, second, 'l'));
+        double answer = Math.log(10);
+        Assertions.assertEquals(answer, calculator.calc(first, second, 'l'));
     }
     @Test
-    void gettext(){
+    void getText(){
         calculator.setVal("5");
+        Assertions.assertEquals("5",calculator.getResult());
         System.out.println(calculator.getResult());
     }
 }
