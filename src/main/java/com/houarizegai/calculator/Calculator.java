@@ -67,6 +67,7 @@ public class Calculator {
     
     */
 
+
     public Calculator() {
         window = new JFrame("Calculator");
         window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -452,7 +453,12 @@ public class Calculator {
 
         return btn;
     }
-
+    public String getResult(){
+        return this.inText.getText();
+    }
+    public void setVal(String val){
+        inText.setText(val);
+    }
     public double calc(double x, String input, char opt) {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
         double y = Double.parseDouble(input);
