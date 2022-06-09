@@ -2,6 +2,7 @@ package com.houarizegai.calculator;
 
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.util.function.Consumer;
@@ -22,7 +23,7 @@ public class Calculator {
     private JFrame window; // Main window
     private JComboBox<String> comboCalcType, comboTheme;
     private JTextField inText; // Input
-    private JButton btnC, btnBack, btnMod, btnDiv, btnMul, btnSub, btnAdd,
+    public JButton btnC, btnBack, btnMod, btnDiv, btnMul, btnSub, btnAdd,
             btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,
             btnPoint, btnEqual, btnRoot, btnPower, btnLog;
 
@@ -459,6 +460,15 @@ public class Calculator {
     public void setVal(String val){
         inText.setText(val);
     }
+    public void setGo(boolean b){
+        go = b;
+    }
+    public void setAddWrite(boolean b){
+        addWrite = b;
+    }
+    public boolean getGo(){
+        return go;
+    }
     //public JButton getBtnAdd() {return this.btnAdd.doClick();}
     public double calc(double x, String input, char opt) {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
@@ -485,6 +495,14 @@ public class Calculator {
                 return y;
         }
     }
+
+    public void empty() {
+        repaintFont();
+        inText.setText("0");
+        opt = ' ';
+        val = 0;
+    }
+
 
     private void repaintFont() {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
