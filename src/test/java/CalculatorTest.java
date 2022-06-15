@@ -14,103 +14,14 @@ class CalculatorTest {
         calculator = new Calculator();
     }
 
-    /*
-     * testCalc() test method
-     */
-//    @Test
-//    void testCalc() {
-//        double first = 3;
-//        String second = "5";
-//
-//        try {
-//            Assertions.assertEquals(8, calculator.calc(first, second, '+'));
-//            Assertions.assertEquals(-2, calculator.calc(first, second, '-'));
-//            Assertions.assertEquals(15, calculator.calc(first, second, '*'));
-//            Assertions.assertEquals(0.6, calculator.calc(first, second, '/'));
-//            Assertions.assertEquals(3d, calculator.calc(first, second, '%'));
-//            Assertions.assertEquals(243, calculator.calc(first, second, '^'));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-    @Test
-    void testCalc_plus(){
-        double first = 200;
-        String second = "100";
-        double answer = 200 + 100;
-        Assertions.assertEquals(answer, calculator.calc(first, second, '+'));
-    }
-    @Test
-    void testCalc_minus(){
-        double first = 200;
-        String second = "100";
-        double answer = 200 - 100;
-        Assertions.assertEquals(answer, calculator.calc(first, second, '-'));
-    }
-    @Test
-    void testCalc_multiplication(){
-        double first = 200;
-        String second = "100";
-        double answer = 200 * 100;
-        Assertions.assertEquals(answer, calculator.calc(first, second, '*'));
-    }
-    @Test
-    void testCalc_division(){
-        double first = 200;
-        String second = "100";
-        double answer = 200 / 100;
-        Assertions.assertEquals(answer, calculator.calc(first, second, '/'));
-    }
-    @Test
-    void testCalc_modulo(){
-        double first = 200;
-        String second = "100";
-        double answer = 200 % 100;
-        Assertions.assertEquals(answer, calculator.calc(first, second, '%'));
-    }
-    @Test
-    void testCalc_square(){
-        double first = 200;
-        String second = "100";
-        double answer = Math.pow(200,100);
-        Assertions.assertEquals(answer, calculator.calc(first, second, '^'));
-    }
-    @Test
-    void testCalc_sqrt(){
-        double first = 3;
-        String second = "10";
-        double answer = Math.sqrt(10);
-        Assertions.assertEquals(answer, calculator.calc(first, second, '√'));
-    }
-    @Test
-    void testCalc_ln(){
-        double first = 3;
-        String second = "10";
-        double answer = Math.log(10);
-        Assertions.assertEquals(answer, calculator.calc(first, second, 'l'));
-    }
-    @Test
-    void testCalc_c(){
-        calculator.setVal("5");
-        calculator.empty();
-        Assertions.assertEquals("0", calculator.getResult());
-    }
-
-    @Test
-    void getText(){
-        calculator.setVal("5");
-        Assertions.assertEquals("5",calculator.getResult());
-        System.out.println(calculator.getResult());
-    }
-
     @Test
     void PC_CC_01(){
         calculator.setVal("5");
         calculator.setGo(true);
 
-        Assertions.assertTrue(Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.getResult()) && calculator.getGo());
-        System.out.println(calculator.getResult());
+        boolean b1 = Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.inText.getText());
+        boolean b2 = (calculator.getGo() == true);
+        Assertions.assertTrue(b1 && b2);
     }
 
     @Test
@@ -118,46 +29,42 @@ class CalculatorTest {
         calculator.setVal("a");
         calculator.setGo(false);
 
-        Assertions.assertFalse(Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.getResult()) && calculator.getGo());
-        System.out.println(calculator.getResult());
+        boolean b1 = Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.inText.getText());
+        boolean b2 = (calculator.getGo() == true);
+        Assertions.assertFalse(b1 && b2);
     }
 
     @Test
     void CACC_01(){
         calculator.setVal("5");
-        calculator.setGo(true);
-        calculator.setAddWrite(true);
+        calculator.setGo(false);
 
-        Assertions.assertTrue(Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.getResult()) && calculator.getGo());
-        System.out.println(calculator.getResult());
+        boolean b1 = Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.inText.getText());
+        boolean b2 = (calculator.getGo() == true);
+        boolean b3 = Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(calculator.val));
+        Assertions.assertTrue(b1 || (b2 && b3));
     }
 
     @Test
     void CACC_02(){
         calculator.setVal("a");
         calculator.setGo(true);
-        calculator.setAddWrite(true);
 
-        Assertions.assertFalse(Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.getResult()) && calculator.getGo());
-        System.out.println(calculator.getResult());
+        boolean b1 = Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.inText.getText());
+        boolean b2 = (calculator.getGo() == true);
+        boolean b3 = Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(calculator.val));
+        Assertions.assertTrue(b1 || (b2 && b3));
     }
 
     @Test
     void CACC_03(){
-        calculator.setVal("5");
-        calculator.setGo(false);
-
-        Assertions.assertFalse(Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.getResult()) && calculator.getGo());
-        System.out.println(calculator.getResult());
-    }
-
-    @Test
-    void CACC_04(){
         calculator.setVal("a");
         calculator.setGo(false);
 
-        Assertions.assertFalse(Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.getResult()) && calculator.getGo());
-        System.out.println(calculator.getResult());
+        boolean b1 = Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", calculator.inText.getText());
+        boolean b2 = (calculator.getGo() == true);
+        boolean b3 = Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(calculator.val));
+        Assertions.assertFalse(b1 || (b2 && b3));
     }
 
     @Test
