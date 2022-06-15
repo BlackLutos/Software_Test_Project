@@ -1,28 +1,12 @@
-# Calculator App
-A very basic calculator application created with Java **Swing**. 
+# ST-2022-310555020
 
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+This project use github action
 
-## Thank You!
-Please ⭐️ this repo and share it with others
+STATUS
+![image](https://user-images.githubusercontent.com/92283002/158647370-fd74c6a8-71c5-4b9a-b2cd-7fc785e474f1.png)
 
-### Screenshots
-Scientific / Dark |  Standard / Colored
-:------------------:|:-------------------
-![Calculator - screenshot](screenshots/dark.PNG) | ![Calculator - screenshot](screenshots/colored.PNG)
+SUCCESS
+![image](https://user-images.githubusercontent.com/92283002/158646656-86829e05-d60a-491a-af95-4b0dd3e83a91.png)
 
-### Requirements 🔧
-* Java version 8 or higher.
-
-### Installation 🔌
-1. Press the **Fork** button (top right the page) to save copy of this project on your account.
-
-2. Download the repository files (project) from the download section or clone this project by typing in the bash the following command:
-
-       git clone https://github.com/HouariZegai/Calculator.git
-3. Imported it in Intellij IDEA or any other Java IDE.
-4. Run the application :D
-
-### Contributing 💡
-If you want to contribute to this project and make it better with new ideas, your pull request is very welcomed.
-If you find any issue just put it in the repository issue section, thank you.
+FAILED
+![image](https://user-images.githubusercontent.com/92283002/158646479-50411fdf-a8e7-4c26-9db4-f0ee618e9912.png)

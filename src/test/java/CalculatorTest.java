@@ -1,18 +1,10 @@
-package com.houarizegai.calculator;
-
+import com.houarizegai.calculator.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
-import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.awt.event.AWTEventListener;
 import java.util.regex.Pattern;
 
-import static org.mockito.Mockito.spy;
-
-@ExtendWith(MockitoExtension.class)
 class CalculatorTest {
 
     private Calculator calculator;
